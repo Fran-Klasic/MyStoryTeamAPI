@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>73504f32-81e1-4757-9822-8abcfb728919</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.23" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.23" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.23" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.15.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Sqlite\MyStoryTeamDB.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

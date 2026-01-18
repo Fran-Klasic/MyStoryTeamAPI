@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyStoryTeamAPI", "MyStoryTeamAPI.csproj", "{B4F19FD4-EAC8-4988-80FC-FD9BCC995C95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4F19FD4-EAC8-4988-80FC-FD9BCC995C95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4F19FD4-EAC8-4988-80FC-FD9BCC995C95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4F19FD4-EAC8-4988-80FC-FD9BCC995C95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4F19FD4-EAC8-4988-80FC-FD9BCC995C95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D0571A5-DB6A-42B7-A175-533D8E29EF07}
+	EndGlobalSection
+EndGlobal
