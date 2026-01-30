@@ -20,6 +20,7 @@ namespace MyStoryTeamAPI.Repository
                 Canvas_Data = request.CanvasContent!,
                 Created_At = DateTime.Now,
                 Updated_At = DateTime.Now,
+                Visibility = 0 //Private by default
             };
             this.DbContext.Canvases.Add(newCanvas);
             this.DbContext.SaveChanges();
@@ -30,43 +31,43 @@ namespace MyStoryTeamAPI.Repository
         {
             DbUser user = this.GetCurrentUser();
             DashboardDetailsResponse? canvasData = this.DbContext.Canvases
-                .Where(c => c.User_Id == user.Id && c.Id == id)
+                .Where(c => (c.User_Id == user.Id && c.Id == id) || (c.Visibility == 1))
                 .Select(c => new DashboardDetailsResponse(c))
                 .FirstOrDefault();
            
             return canvasData;
         }
 
-        #region TEST
-        public int GenerateTestContent(CreateTestReqeust reqeust)
-        {
-            DbUser user = this.GetCurrentUser();
+        //#region TEST
+        //public int GenerateTestContent(CreateTestReqeust reqeust)
+        //{
+        //    DbUser user = this.GetCurrentUser();
 
-            DbTest newContent = new DbTest
-            {
-                UserId = user.Id,
-                TextContent = reqeust.TextContent,
-            };
+        //    DbTest newContent = new DbTest
+        //    {
+        //        UserId = user.Id,
+        //        TextContent = reqeust.TextContent,
+        //    };
 
-            this.DbContext.Tests.Add(newContent);
-            this.DbContext.SaveChanges();
+        //    this.DbContext.Tests.Add(newContent);
+        //    this.DbContext.SaveChanges();
 
-            return newContent.Id;
-        }
+        //    return newContent.Id;
+        //}
 
-        public DbTest[] GetAllContent()
-        {
-            DbUser user = this.GetCurrentUser();
+        //public DbTest[] GetAllContent()
+        //{
+        //    DbUser user = this.GetCurrentUser();
 
-            return this.DbContext.Tests.Where(t => t.UserId == user.Id).ToArray();
-        }
+        //    return this.DbContext.Tests.Where(t => t.UserId == user.Id).ToArray();
+        //}
 
-        public DbTest? GetDetails(int id)
-        {
-            DbUser user = this.GetCurrentUser();
+        //public DbTest? GetDetails(int id)
+        //{
+        //    DbUser user = this.GetCurrentUser();
 
-            return this.DbContext.Tests.Where(t => t.UserId == user.Id && t.Id == id).FirstOrDefault();
-        }
-        #endregion
+        //    return this.DbContext.Tests.Where(t => t.UserId == user.Id && t.Id == id).FirstOrDefault();
+        //}
+        //#endregion
     }
 }
