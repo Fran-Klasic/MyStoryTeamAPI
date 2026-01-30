@@ -35,11 +35,17 @@ namespace MyStoryTeamAPI.Controllers
 
         [AllowAnonymous]
         [HttpPost("register")]
-        public ActionResult<string> RegisterUser(RegisterUserRequest request)
+        public ActionResult RegisterUser(RegisterUserRequest request)
         {
-            int id = this._authRepository.RegisterUser(request);
+            this._authRepository.RegisterUser(request);
+            return this.Ok();
+        }
 
-            return this.Ok($"{id}");
+        [Authorize]
+        [HttpGet("test")]
+        public ActionResult TestUser()
+        {
+            return this.Ok();
         }
     }
 }
