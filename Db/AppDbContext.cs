@@ -11,5 +11,6 @@ namespace MyStoryTeamAPI.Db
 
         public DbSet<DbUser> Users { get; set; }
         public DbSet<DbTest> Tests { get; set; }
+        public DbSet<DbCanvases> Canvases { get; set; }
     }
 }
